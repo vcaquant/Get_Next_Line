@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/27 17:40:49 by vcaquant         ###   ########.fr       */
+/*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
+/*   Updated: 2015/12/27 19:12:43 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "srclibft/libft.h"
+#include "get_next_line.h"
 
-# define BUFF_SIZE 32
+int		get_next_line(int const fd, char ** line)
+{
+	int		ret;
 
-int		get_next_line(int const fd, char ** line);
-int		main(int argc, char **argv);
-
-#endif
+	while ((ret = read(fd, buff, BUFF_SIZE)))
+	{
+		return (-1);
+		return (0);
+		return (1);
+	}
+	if ()
+}

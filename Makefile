@@ -6,7 +6,7 @@
 #    By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 03:44:14 by vcaquant          #+#    #+#              #
-#    Updated: 2015/12/23 16:00:23 by vcaquant         ###   ########.fr        #
+#    Updated: 2015/12/23 16:33:04 by vcaquant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRC_NAME = srclibft/ft_atoi.c \
 		   srclibft/ft_strtrim.c \
 		   srclibft/ft_strnncpy.c \
 		   main.c \
+		   get_next_line.c \
 
 OBJ_PATH = ./
 
