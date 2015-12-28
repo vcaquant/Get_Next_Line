@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/27 17:40:49 by vcaquant         ###   ########.fr       */
+/*   Updated: 2015/12/28 14:24:20 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@
 
 # define BUFF_SIZE 32
 
-int		get_next_line(int const fd, char ** line);
-int		main(int argc, char **argv);
+typedef struct	s_data
+{
+	char			*data;
+}				t_data;
+
+int				get_next_line(int const fd, char ** line);
+int				main(int argc, char **argv);
 
 #endif
