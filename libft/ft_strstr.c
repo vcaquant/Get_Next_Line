@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/30 16:00:39 by vcaquant         ###   ########.fr       */
+/*   Created: 2015/11/26 20:54:34 by vcaquant          #+#    #+#             */
+/*   Updated: 2015/11/28 17:15:10 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-# define BUFF_SIZE 32
-
-typedef struct	s_data
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	char			*data;
-}				t_data;
+	size_t	n;
 
-int				get_next_line(int const fd, char ** line);
-int				main(int argc, char **argv);
-
-#endif
+	if (*s2 == '\0')
+		return ((char*)s1);
+	n = ft_strlen(s2);
+	while (*s1 != '\0')
+	{
+		if (*s1 == *s2 && ft_memcmp(s1, s2, n) == 0)
+			return ((char*)s1);
+		s1++;
+	}
+	return (NULL);
+}

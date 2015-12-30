@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/30 16:00:39 by vcaquant         ###   ########.fr       */
+/*   Created: 2015/11/30 14:39:08 by vcaquant          #+#    #+#             */
+/*   Updated: 2015/12/03 11:43:11 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-# define BUFF_SIZE 32
-
-typedef struct	s_data
+int		ft_strequ(char const *s1, char const *s2)
 {
-	char			*data;
-}				t_data;
-
-int				get_next_line(int const fd, char ** line);
-int				main(int argc, char **argv);
-
-#endif
+	if (s1 && s2)
+	{
+		if (ft_strcmp(s1, s2) == 0)
+			return (1);
+		else
+			return (0);
+	}
+	else
+		return (0);
+}

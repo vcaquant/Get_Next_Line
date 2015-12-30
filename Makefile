@@ -6,65 +6,65 @@
 #    By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 03:44:14 by vcaquant          #+#    #+#              #
-#    Updated: 2015/12/23 16:33:04 by vcaquant         ###   ########.fr        #
+#    Updated: 2015/12/30 16:00:35 by vcaquant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH = ./
 
-SRC_NAME = srclibft/ft_atoi.c \
-		   srclibft/ft_strrchr.c \
-		   srclibft/ft_bzero.c \
-		   srclibft/ft_isalnum.c \
-		   srclibft/ft_isalpha.c \
-		   srclibft/ft_isascii.c \
-		   srclibft/ft_isdigit.c \
-		   srclibft/ft_isprint.c \
-		   srclibft/ft_memccpy.c \
-		   srclibft/ft_memchr.c \
-		   srclibft/ft_memcmp.c \
-		   srclibft/ft_memset.c \
-		   srclibft/ft_memmove.c \
-		   srclibft/ft_memcpy.c \
-		   srclibft/ft_putchar.c \
-		   srclibft/ft_putchar_fd.c \
-		   srclibft/ft_putstr.c \
-		   srclibft/ft_putstr_fd.c \
-		   srclibft/ft_strcat.c \
-		   srclibft/ft_strchr.c \
-		   srclibft/ft_strcmp.c \
-		   srclibft/ft_strcpy.c \
-		   srclibft/ft_strdup.c \
-		   srclibft/ft_strlcat.c \
-		   srclibft/ft_strlen.c \
-		   srclibft/ft_strncat.c \
-		   srclibft/ft_strncmp.c \
-		   srclibft/ft_strncpy.c \
-		   srclibft/ft_strnstr.c \
-		   srclibft/ft_strstr.c \
-		   srclibft/ft_tolower.c \
-		   srclibft/ft_toupper.c \
-		   srclibft/ft_putendl.c \
-		   srclibft/ft_putendl_fd.c \
-		   srclibft/ft_putnbr.c \
-		   srclibft/ft_putnbr_fd.c \
-		   srclibft/ft_itoa.c \
-		   srclibft/ft_memalloc.c \
-		   srclibft/ft_memdel.c \
-		   srclibft/ft_strclr.c \
-		   srclibft/ft_strdel.c \
-		   srclibft/ft_strequ.c \
-		   srclibft/ft_striter.c \
-		   srclibft/ft_striteri.c \
-		   srclibft/ft_strjoin.c \
-		   srclibft/ft_strmap.c \
-		   srclibft/ft_strmapi.c \
-		   srclibft/ft_strnequ.c \
-		   srclibft/ft_strnew.c \
-		   srclibft/ft_strsplit.c \
-		   srclibft/ft_strsub.c \
-		   srclibft/ft_strtrim.c \
-		   srclibft/ft_strnncpy.c \
+SRC_NAME = libft/ft_atoi.c \
+		   libft/ft_strrchr.c \
+		   libft/ft_bzero.c \
+		   libft/ft_isalnum.c \
+		   libft/ft_isalpha.c \
+		   libft/ft_isascii.c \
+		   libft/ft_isdigit.c \
+		   libft/ft_isprint.c \
+		   libft/ft_memccpy.c \
+		   libft/ft_memchr.c \
+		   libft/ft_memcmp.c \
+		   libft/ft_memset.c \
+		   libft/ft_memmove.c \
+		   libft/ft_memcpy.c \
+		   libft/ft_putchar.c \
+		   libft/ft_putchar_fd.c \
+		   libft/ft_putstr.c \
+		   libft/ft_putstr_fd.c \
+		   libft/ft_strcat.c \
+		   libft/ft_strchr.c \
+		   libft/ft_strcmp.c \
+		   libft/ft_strcpy.c \
+		   libft/ft_strdup.c \
+		   libft/ft_strlcat.c \
+		   libft/ft_strlen.c \
+		   libft/ft_strncat.c \
+		   libft/ft_strncmp.c \
+		   libft/ft_strncpy.c \
+		   libft/ft_strnstr.c \
+		   libft/ft_strstr.c \
+		   libft/ft_tolower.c \
+		   libft/ft_toupper.c \
+		   libft/ft_putendl.c \
+		   libft/ft_putendl_fd.c \
+		   libft/ft_putnbr.c \
+		   libft/ft_putnbr_fd.c \
+		   libft/ft_itoa.c \
+		   libft/ft_memalloc.c \
+		   libft/ft_memdel.c \
+		   libft/ft_strclr.c \
+		   libft/ft_strdel.c \
+		   libft/ft_strequ.c \
+		   libft/ft_striter.c \
+		   libft/ft_striteri.c \
+		   libft/ft_strjoin.c \
+		   libft/ft_strmap.c \
+		   libft/ft_strmapi.c \
+		   libft/ft_strnequ.c \
+		   libft/ft_strnew.c \
+		   libft/ft_strsplit.c \
+		   libft/ft_strsub.c \
+		   libft/ft_strtrim.c \
+		   libft/ft_strnncpy.c \
 		   main.c \
 		   get_next_line.c \
 

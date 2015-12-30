@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/30 15:59:36 by vcaquant         ###   ########.fr       */
+/*   Created: 2015/11/24 13:04:30 by vcaquant          #+#    #+#             */
+/*   Updated: 2015/11/28 18:01:12 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-int		free_str(char *str)
+int		ft_atoi(const char *str)
 {
-	free(str);
-	return ();
-}
+	int n;
+	int i;
+	int nb;
 
-int		get_next_line(int const fd, char ** line)
-{
-	char	buff[BUFF_SIZE];
-	int		ret;
-	
-	if (!line || (BUFF_SIZE <= 0))
-		return (-1);
-	if ((ret = read(fd, buff, BUFF_SIZE)))
+	n = 0;
+	i = 0;
+	nb = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
+		i++;
+	if (str[i] == '-')
 	{
-		buff[ret] = '\0';
-
+		n = 1;
+		i++;
 	}
-	return (ret);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = (int)str[i] - '0' + nb * 10;
+		i++;
+	}
+	if (n == 1)
+		nb = -nb;
+	return (nb);
 }

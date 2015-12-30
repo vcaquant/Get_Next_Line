@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/30 16:00:39 by vcaquant         ###   ########.fr       */
+/*   Created: 2015/11/23 18:28:10 by vcaquant          #+#    #+#             */
+/*   Updated: 2015/12/03 13:47:18 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-# define BUFF_SIZE 32
-
-typedef struct	s_data
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char			*data;
-}				t_data;
+	unsigned char*s3;
+	unsigned char*s4;
 
-int				get_next_line(int const fd, char ** line);
-int				main(int argc, char **argv);
-
-#endif
+	s3 = (unsigned char*)s1;
+	s4 = (unsigned char*)s2;
+	while ((*s3 || *s4) && n--)
+	{
+		if (*s3 != *s4)
+			return (*s3 - *s4);
+		s3++;
+		s4++;
+	}
+	return (0);
+}
