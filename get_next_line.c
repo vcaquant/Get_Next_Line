@@ -25,12 +25,13 @@ int		free_str(char *str, int ret)
 
 int		get_next_line(int const fd, char ** line)
 {
-	char	buff[BUFF_SIZE];
-	int		ret;
-	
+	char		buff[BUFF_SIZE];
+	int			ret;
+	t_data		*data;
+
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
-	if ()
+	if (!(ret = )
 	{
 		while ((ret = read(fd, buff, BUFF_SIZE)))
 		{
