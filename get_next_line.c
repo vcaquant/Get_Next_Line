@@ -6,15 +6,23 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/30 18:27:55 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/07 13:34:51 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		
+int		read_d(t_data *data, char **line)
 {
-	
+	int		ret;
+	char	*str;
+
+	ret = 0;
+	if (str = ft_strchr(data->data, '\n'))
+	{
+		
+	}
+	return (ret);
 }
 
 int		free_str(char *str, int ret)
@@ -29,9 +37,10 @@ int		get_next_line(int const fd, char ** line)
 	int			ret;
 	t_data		*data;
 
+	ret = 0;
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
-	if (!(ret = )
+	if (!(ret = ))
 	{
 		while ((ret = read(fd, buff, BUFF_SIZE)))
 		{
