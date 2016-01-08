@@ -6,11 +6,13 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/07 13:34:51 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/08 13:48:33 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+
 
 int		read_d(t_data *data, char **line)
 {
@@ -18,10 +20,19 @@ int		read_d(t_data *data, char **line)
 	char	*str;
 
 	ret = 0;
-	if (str = ft_strchr(data->data, '\n'))
+	if ((str = ft_strchr(data->data, '\n')))
 	{
-		
+		*str = '\0';
+		str++;
+		ret = 1;
 	}
+	*line = ft_strdup(data->data);
+	if (!(*line))
+		return (-1);
+	if (ret)
+		ft_strcpy(data->data, str);
+	else
+		ft_strclr(data->data);
 	return (ret);
 }
 
@@ -40,7 +51,7 @@ int		get_next_line(int const fd, char ** line)
 	ret = 0;
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
-	if (!(ret = ))
+	if (!(ret = read_d(data, line)))
 	{
 		while ((ret = read(fd, buff, BUFF_SIZE)))
 		{
