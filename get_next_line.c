@@ -6,16 +6,18 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/11 15:12:27 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/11 15:24:07 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-t_data	g_data(int const fd, t_list **lst)
+t_data	g_data(int const fd, t_list **lst_p)
 {
-	t_list	;
+	t_list	*lst;
 	t_data	*data;
+
+	return (*data);
 }
 
 int		read_d(t_data *data, char **line)
