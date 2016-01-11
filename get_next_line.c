@@ -6,13 +6,17 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/08 13:48:33 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/11 15:12:27 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-
+t_data	g_data(int const fd, t_list **lst)
+{
+	t_list	;
+	t_data	*data;
+}
 
 int		read_d(t_data *data, char **line)
 {
@@ -42,7 +46,7 @@ int		free_str(char *str, int ret)
 	return (ret);
 }
 
-int		get_next_line(int const fd, char ** line)
+int		get_next_line(int const fd, char **line)
 {
 	char		buff[BUFF_SIZE];
 	int			ret;
