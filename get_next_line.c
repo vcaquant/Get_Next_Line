@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/11 15:24:07 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/14 14:15:02 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 t_data	g_data(int const fd, t_list **lst_p)
 {
 	t_list	*lst;
-	t_data	*data;
+	t_data	data;
 
+	lst = *lst_p;
+	while (lst)
+	{
+		
+	}
 	return (*data);
 }
 
