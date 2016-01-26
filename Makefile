@@ -6,7 +6,7 @@
 #    By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 03:44:14 by vcaquant          #+#    #+#              #
-#    Updated: 2015/12/30 16:00:35 by vcaquant         ###   ########.fr        #
+#    Updated: 2016/01/26 16:27:10 by vcaquant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,9 +74,9 @@ INC_PATH = ./
 
 LIB_PATH = ./
 
-NAME = gnl.a
+NAME = gnl
 
-CC = gcc
+CC = clang
 
 CFLAGS = -Werror -Wall -Wextra
 
@@ -87,16 +87,22 @@ INC = $(addprefix -I,$(INC_PATH))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	    $(CC) $(CFLAGS) $(SRC) -I $(INC) 
+$(NAME):
+		@echo "\033[032;32mCompilation Start\n"
+		@echo "\033[032;33m"
+	    $(CC) $(CFLAGS) $(SRC) -I $(INC) -o $(NAME)
+		@echo "\033[032;32mCompilation Done :D\n"
 
 exe: all
-	./a.out
+	./$(NAME)
+	@echo "\033[032;33mFinish\n"
 
 clean:
-	/bin/rm -rf a.out
+	/bin/rm -rf $(NAME)
+	@echo "\033[032;31mFile Deleted ;)\n"
 
 fclean: clean
-	/bin/rm -rf $(NAME)
 
 re: clean fclean all
+
+.PHONY : all clean fclean re
