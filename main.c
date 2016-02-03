@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:10:02 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/23 16:57:59 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/26 16:12:19 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		main(int ac, char **av)
 {
+	ac = 1;
 	ft_putnbr(get_next_line(1, av));
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/14 14:15:02 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/01/26 16:05:59 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-t_data	g_data(int const fd, t_list **lst_p)
+t_data	g_data(t_list **lst_p)
 {
 	t_list	*lst;
 	t_data	data;
@@ -22,7 +22,7 @@ t_data	g_data(int const fd, t_list **lst_p)
 	{
 		
 	}
-	return (*data);
+	return (data);
 }
 
 int		read_d(t_data *data, char **line)
@@ -60,6 +60,7 @@ int		get_next_line(int const fd, char **line)
 	t_data		*data;
 
 	ret = 0;
+	data = NULL;
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
 	if (!(ret = read_d(data, line)))

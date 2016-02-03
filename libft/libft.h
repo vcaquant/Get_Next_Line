@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 11:35:30 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/04 15:15:12 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/02/01 12:44:54 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_strnncpy(char *dst, const char *src, int ndeb, int nfin);
+void	ft_wait(void);
+void	ft_sleep(void);
 #endif

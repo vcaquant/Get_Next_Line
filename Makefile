@@ -6,7 +6,7 @@
 #    By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 03:44:14 by vcaquant          #+#    #+#              #
-#    Updated: 2016/01/26 16:27:10 by vcaquant         ###   ########.fr        #
+#    Updated: 2016/02/01 12:37:09 by vcaquant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,18 +88,23 @@ INC = $(addprefix -I,$(INC_PATH))
 all: $(NAME)
 
 $(NAME):
-		@echo "\033[032;32mCompilation Start\n"
 		@echo "\033[032;33m"
-	    $(CC) $(CFLAGS) $(SRC) -I $(INC) -o $(NAME)
-		@echo "\033[032;32mCompilation Done :D\n"
+		@$(CC) $(CFLAGS) libft/wait.c libft/ft_putchar.c libft/ft_putstr.c -o wait
+		@echo "\033[032;33mCompilation Start\n"
+		@sleep 1
+		@clear
+		@$(CC) $(CFLAGS) $(SRC) -I $(INC) -o $(NAME) | ./wait
+		@echo "\033[032;32mCompilation Done :D"
+		@rm wait
 
 exe: all
 	./$(NAME)
 	@echo "\033[032;33mFinish\n"
 
 clean:
-	/bin/rm -rf $(NAME)
-	@echo "\033[032;31mFile Deleted ;)\n"
+	@/bin/rm -rf $(NAME)
+	@echo "\033[032;31mFile Deleted ;)"
+	@sleep 1
 
 fclean: clean
 
