@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/26 16:05:59 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/02/23 19:20:43 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,21 @@ int		free_str(char *str, int ret)
 
 int		get_next_line(int const fd, char **line)
 {
-	char		buff[BUFF_SIZE];
-	int			ret;
-	t_data		*data;
+	static char		buff[BUFF_SIZE];
+	int				ret;
+	t_data			*data;
 
 	ret = 0;
-	data = NULL;
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
 	if (!(ret = read_d(data, line)))
 	{
 		while ((ret = read(fd, buff, BUFF_SIZE)))
 		{
+			if (ret < 0)
+				return (free_str(buff, -1));
 			buff[ret] = '\0';
+			
 		}
 	}
 	return (ret);
