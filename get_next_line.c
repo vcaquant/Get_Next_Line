@@ -12,19 +12,6 @@
 
 #include "get_next_line.h"
 
-t_data	g_data(t_list **lst_p)
-{
-	t_list	*lst;
-	t_data	data;
-
-	lst = *lst_p;
-	while (lst)
-	{
-		
-	}
-	return (data);
-}
-
 int		read_d(t_data *data, char **line)
 {
 	int		ret;
