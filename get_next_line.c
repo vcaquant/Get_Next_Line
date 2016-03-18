@@ -6,33 +6,11 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/03/03 15:34:10 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/03/18 17:53:40 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		read_d(t_data *data, char **line)
-{
-	int		ret;
-	char	*str;
-
-	ret = 0;
-	if ((str = ft_strchr(data->data, '\n')))
-	{
-		*str = '\0';
-		str++;
-		ret = 1;
-	}
-	*line = ft_strdup(data->data);
-	if (!(*line))
-		return (-1);
-	if (ret)
-		ft_strcpy(data->data, str);
-	else
-		ft_strclr(data->data);
-	return (ret);
-}
 
 int		free_str(char *str, int ret)
 {
@@ -40,26 +18,46 @@ int		free_str(char *str, int ret)
 	return (ret);
 }
 
+int		ft_strnlen(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != c)
+		i++;
+	return (i);
+}
+
 int		get_next_line(int const fd, char **line)
 {
 	static char		buff[BUFF_SIZE];
 	int				ret;
-	t_data			*data;
+	int				i;
 
-	ret = 0;
+	ft_putstr("hey\n");
+	i = 0;
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
-	if (!(ret = read_d(data, line)))
+	ft_putstr("premier if\n");
+	while (read(fd, buff, BUFF_SIZE) > 0)
 	{
-		while ((ret = read(fd, buff, BUFF_SIZE)))
+		*line = malloc(ft_strnlen(buff, '\n') * sizeof(char));
+		*line[0] = '\0';
+			ft_putstr("premier while\n");
+		if (ft_strchr(buff, '\n') != NULL)
 		{
-			if (buff == '\n')
+			while (buff[i] != '\n' || buff[i] != '\0')
+			{
+				ft_strncat(*line, buff, BUFF_SIZE);
+				ft_putstr(*line);
+				ft_putstr("je sais pas");
+				i++;
+			}
+			if (buff[i] == '\n' || buff[i] == '\0')
 				return (1);
-			if (ret < 0)
-				return (free_str(buff, -1));
-			buff[ret] = '\0';
-			
 		}
+		if (ret < 0)
+			return (free_str(buff, -1));
 	}
 	return (ret);
 }

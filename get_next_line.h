@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/01/11 15:08:04 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/03/18 14:34:08 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ typedef struct	s_list
 }				t_list;
 
 int				get_next_line(int const fd, char **line);
-int				main(int argc, char **argv);
+int				main(void);
 
 #endif
