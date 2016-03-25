@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/03/22 16:29:43 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/03/23 18:30:53 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ int		ft_strnlen(char *str, char c)
 	return (i);
 }
 
+t_data	g_data(int const fd, t_list **list)
+{
+	t_data		*data;
+
+
+}
+
 int		get_next_line(int const fd, char **line)
 {
 	static char		buff[2] = "";
@@ -55,13 +62,14 @@ int		get_next_line(int const fd, char **line)
 			ft_putstr("rentre\n");
 			while (buff[i] != '\n' && buff[i] != '\0')
 			{
-				ft_strncat(line[i], buff, 1);
+				ft_strncat(*line, buff, 1);
 				ft_putstr("\033[032;31m");
-				ft_putstr(line[i]);
+				ft_putstr(*line);
 				ft_putstr("\033[0m");
 				ft_putchar('\n');
 				ft_putstr("je sais pas\n");
 				i++;
+				line++;
 				ft_putstr("avant 2eme\n");
 			}
 			if (buff[i] == '\n' || buff[i] == '\0')
