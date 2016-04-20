@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/20 15:48:20 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/20 16:15:32 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,8 @@ int		get_next_line(int const fd, char **line)
 			{
 				line[i] = ft_strsub(buff, i, 1);
 				ft_putstr("\033[032;31m");
-				ft_putstr(line[i]);
+				ft_putstr(save);
 				ft_putchar('\n');
-				ft_putstr(*line);
 				ft_putstr("\033[0m");
 				ft_putchar('\n');
 				i++;
