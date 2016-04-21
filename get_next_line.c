@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/20 16:15:32 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/21 20:06:56 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ int		ft_strnlen(char *str, char c)
 
 	i = 0;
 	while (str[i] != c)
-	{
 		i++;
-		ft_putstr("1,2,3...");
-	}
-	ft_putstr("len");
 	return (i);
 }
 
@@ -43,53 +39,38 @@ int		get_next_line(int const fd, char **line)
 	static char		*save;
 	int				i;
 	int				ret;
-	//char			**data;
 
-	i = 0;
+	save = malloc(1);
+	save[0] = '\0';
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
 	while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
 	{
+		i = 0;
 		buff[ret] = '\0';
 		ft_putstr(buff);
-		ft_putstr("avant\n");
-		save = malloc(100 * sizeof(char));
-		//data = malloc(100 * sizeof(char));
-		//*line = malloc(100 * sizeof(char));
-		ft_putstr("apres\n");
-		//*line[0] = '\0';
-		ft_putstr("premier while\n");
-		if ((ft_strchr(buff, '\n')) != NULL)
-		{
-			ft_strjoin(save, buff);
-			ft_putstr("rentre\n");
-			while (buff[i] != '\n' && buff[i] != '\0')
-			{
-				line[i] = ft_strsub(buff, i, 1);
-				ft_putstr("\033[032;31m");
-				ft_putstr(save);
-				ft_putchar('\n');
-				ft_putstr("\033[0m");
-				ft_putchar('\n');
-				i++;
-				ft_putstr("avant 2eme\n");
-			}
-			if (buff[i] == '\n' || buff[i] == '\0')
-			{
-				//ft_strcpy(*line, *data);
-				ft_putstr("\033[033;33m");
-				ft_putstr(*line);
-				ft_putchar('\n');
-				ft_putstr("\033[0m");
-				ret = 1;
-			}
-			else
-				ret = 0;
-		}
-		ft_putstr("rentre pas\n");
-//		if (ret < 0)
-//			return (free_str(buff, -1));
+		ft_putchar('\n');
+		ft_strcat(save, buff);
+		ft_putstr("\033[032;31m");
+		ft_putstr(save);
+		ft_putstr("\033[0m");
+		ft_putchar('\n');
+		i = ft_strlen(save);
 	}
-	ft_putstr("avant return\n");
+	if ((ft_strchr(save, '\n')) != NULL)
+	{
+		*line = malloc(ft_strnlen(save, '\n') + 1);
+		**line = '\0';
+		ft_strncpy(*line, save, ft_strnlen(save, '\n'));
+		ft_putstr("\033[033;33m");
+		ft_putstr(*line);
+		ft_putchar('\n');
+		ft_putstr("\033[0m");
+		ret = 1;
+	}
+	else
+		ret = 0;
+	if (ret < 0)
+		return (free_str(buff, -1));
 	return (ret);
 }
