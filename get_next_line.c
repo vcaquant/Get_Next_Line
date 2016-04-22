@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/21 20:06:56 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/22 16:55:05 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,19 @@ int		ft_strnlen(char *str, char c)
 	return (i);
 }
 
-//t_data	g_data(int const fd)
-//{
-//	t_data		*data;
-//}
-
 int		get_next_line(int const fd, char **line)
 {
-	static char		buff[2] = "";
+	char			*buff;
 	static char		*save;
-	int				i;
 	int				ret;
 
+	buff = malloc(BUFF_SIZE);
 	save = malloc(1);
 	save[0] = '\0';
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
 	while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
 	{
-		i = 0;
 		buff[ret] = '\0';
 		ft_putstr(buff);
 		ft_putchar('\n');
@@ -55,7 +49,6 @@ int		get_next_line(int const fd, char **line)
 		ft_putstr(save);
 		ft_putstr("\033[0m");
 		ft_putchar('\n');
-		i = ft_strlen(save);
 	}
 	if ((ft_strchr(save, '\n')) != NULL)
 	{

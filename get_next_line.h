@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/21 20:34:57 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/22 14:23:51 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include "libft/libft.h"
 
-# define BUFF_SIZE 9
+# define BUFF_SIZE 10
 
 typedef struct	s_data
 {
