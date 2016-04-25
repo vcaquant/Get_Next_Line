@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/22 16:55:05 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/25 16:25:51 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		get_next_line(int const fd, char **line)
 		ft_putstr("\033[0m");
 		ft_putchar('\n');
 	}
-	if ((ft_strchr(save, '\n')) != NULL)
+	if ((ft_strchr(save, '\n')) != NULL || (ft_strchr(save, '\0')) != NULL)
 	{
 		*line = malloc(ft_strnlen(save, '\n') + 1);
 		**line = '\0';
