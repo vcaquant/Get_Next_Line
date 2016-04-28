@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/25 16:25:51 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/28 16:58:14 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,35 +34,32 @@ int		get_next_line(int const fd, char **line)
 	static char		*save;
 	int				ret;
 
-	buff = malloc(BUFF_SIZE);
-	save = malloc(1);
-	save[0] = '\0';
+	buff = malloc(BUFF_SIZE + 1);
+	save = ft_strnew(1);
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
 	while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[ret] = '\0';
+		ft_putstr("BUFF\n");
 		ft_putstr(buff);
 		ft_putchar('\n');
-		ft_strcat(save, buff);
+		save = ft_strjoin(buff, save);
+		ft_putstr("SAVE\n");
 		ft_putstr("\033[032;31m");
 		ft_putstr(save);
 		ft_putstr("\033[0m");
 		ft_putchar('\n');
 	}
-	if ((ft_strchr(save, '\n')) != NULL || (ft_strchr(save, '\0')) != NULL)
-	{
-		*line = malloc(ft_strnlen(save, '\n') + 1);
-		**line = '\0';
-		ft_strncpy(*line, save, ft_strnlen(save, '\n'));
-		ft_putstr("\033[033;33m");
-		ft_putstr(*line);
-		ft_putchar('\n');
-		ft_putstr("\033[0m");
-		ret = 1;
-	}
-	else
-		ret = 0;
+	*line = ft_strsub(save, 0, ft_strnlen(save, '\n'));
+	ft_putstr("LINE\n");
+	ft_putstr("\033[033;33m");
+	ft_putstr(*line);
+	ft_putchar('\n');
+	ft_putstr("\033[0m");
+	ret = 1;
+	//if 
+	//	ret = 0;
 	if (ret < 0)
 		return (free_str(buff, -1));
 	return (ret);
