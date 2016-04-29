@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/28 16:58:14 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/04/29 16:37:33 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int		ft_strnlen(char *str, char c)
 
 int		get_next_line(int const fd, char **line)
 {
-	char			*buff;
-	static char		*save;
+	static char		buff[BUFF_SIZE + 1];
+	char		*save;
 	int				ret;
 
-	buff = malloc(BUFF_SIZE + 1);
+	//buff = malloc(BUFF_SIZE + 1);
 	save = ft_strnew(1);
 	if (!line || (BUFF_SIZE <= 0))
 		return (-1);
@@ -44,7 +44,7 @@ int		get_next_line(int const fd, char **line)
 		ft_putstr("BUFF\n");
 		ft_putstr(buff);
 		ft_putchar('\n');
-		save = ft_strjoin(buff, save);
+		save = ft_strjoin(save, buff);
 		ft_putstr("SAVE\n");
 		ft_putstr("\033[032;31m");
 		ft_putstr(save);
