@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:10:02 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/04/29 16:34:10 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:40:44 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int     main()
 	}
 	while ((i = get_next_line((int const)fd, &line)) > 0)
 	{
-		ft_putendl("LINE");
+		ft_putnbr(i);
+		ft_putendl("LINEP");
 		ft_putendl(line);
 		free (line);
 	}
