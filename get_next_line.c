@@ -6,11 +6,27 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/04 16:57:57 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/05 16:28:41 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	del_f(char *str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = (ft_strnlen(str, '\n')) + 1;
+	while (str[i] != '\n')
+	{
+		str[i] = str[j];
+		i++;
+		j++;
+	}
+	return (*str);
+}
 
 int		free_str(char *str, int ret)
 {
@@ -56,6 +72,9 @@ int		get_next_line(int const fd, char **line)
 	ft_putstr(*line);
 	ft_putchar('\n');
 	ft_putstr("\033[0m");
+	del_f(save);
+	//ft_bzero(save, ft_strlen(*line));
+	ft_putstr(save);
 	ret = 1;
 	//if 
 	//	ret = 0;

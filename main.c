@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:10:02 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/04 11:40:44 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:33:42 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int     main()
 	int     fd;
 	char    *line;
 	int		i;
+	int		j;
 
+	j = 1;
 	fd = open("caca.txt", O_RDONLY);
 	if (fd == -1)
 	{
@@ -45,10 +47,11 @@ int     main()
 	}
 	while ((i = get_next_line((int const)fd, &line)) > 0)
 	{
-		ft_putnbr(i);
+		ft_putnbr(j);
 		ft_putendl("LINEP");
 		ft_putendl(line);
 		free (line);
+		j++;
 	}
 	return (1);
 }

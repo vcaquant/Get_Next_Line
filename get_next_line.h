@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/04 11:37:21 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/05 11:59:33 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct	s_data
 {
-	char			*data;
+	char		*save;
 }				t_data;
 
 typedef struct	s_list
