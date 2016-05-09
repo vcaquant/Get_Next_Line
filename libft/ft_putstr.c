@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 21:33:14 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/11/27 03:23:00 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/09 15:36:25 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr(char const *s)
 	int i;
 
 	i = 0;
+	if (!s)
+		ft_putstr("NULL");
 	while (s[i])
 	{
 		ft_putchar(s[i]);

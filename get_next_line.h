@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/05 11:59:33 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/09 16:54:30 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 # include <unistd.h>
 # include "libft/libft.h"
 
-# define BUFF_SIZE 15
+# define BUFF_SIZE 2
 
-typedef struct	s_data
+typedef struct	s_g
 {
+	char		buff[BUFF_SIZE + 1];
 	char		*save;
-}				t_data;
+	int			pass;
+	int			ret;
+}				t_g;
 
 typedef struct	s_list
 {
@@ -31,6 +34,5 @@ typedef struct	s_list
 }				t_list;
 
 int				get_next_line(int const fd, char **line);
-int				main(void);
 
 #endif
