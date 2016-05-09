@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:12:47 by vcaquant          #+#    #+#             */
-/*   Updated: 2015/12/07 11:56:01 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/09 18:25:38 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		start++;
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
