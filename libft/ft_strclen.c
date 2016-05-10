@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/23 16:00:41 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/10 13:46:30 by vcaquant         ###   ########.fr       */
+/*   Created: 2016/05/10 13:55:43 by vcaquant          #+#    #+#             */
+/*   Updated: 2016/05/10 13:57:49 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include <stdio.h>
+#include "libft.h"
 
-# define BUFF_SIZE 10
-
-typedef struct	s_g
+int		ft_strclen(char *str, char c)
 {
-	char		buff[BUFF_SIZE + 1];
-	char		*save;
-	int			ret;
-}				t_g;
+	int	i;
 
-int				get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	while (str[i] != c && str[i] != '\0')
+		i++;
+	return (i);
+}

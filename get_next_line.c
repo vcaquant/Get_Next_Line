@@ -6,21 +6,11 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:16:00 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/09 18:53:49 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:00:57 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int		ft_strnlen(char *str, char c)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != c && str[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_free_first(char *str, int n)
 {
@@ -49,25 +39,42 @@ int		ft_init(t_g **g)
 	return (1);
 }
 
+char	*ft_tmp(char *save, char *buff)
+{
+	char	*tmp;
+
+	tmp = ft_strjoin(save, buff);
+	free(save);
+	save = tmp;
+	return (save);
+}
+
+char	*ft_line(t_g **g, char *line)
+{
+	if (ft_strchr((*g)->save, '\n'))
+	{
+		line = ft_strsub((*g)->save, 0, ft_strclen((*g)->save, '\n'));
+		(*g)->save = ft_free_first((*g)->save, ft_strclen((*g)->save, '\n'));
+	}
+	else
+	{
+		line = ft_strsub((*g)->save, 0, ft_strlen((*g)->save));
+		ft_bzero((*g)->save, ft_strlen((*g)->save));
+	}
+	return (line);
+}
+
 int		get_next_line(int const fd, char **line)
 {
 	static t_g		*g = NULL;
-	char			*tmp;
 
-	if (!ft_init(&g))
-		return (-1);
-	if (!line || (BUFF_SIZE <= 0))
+	if (!ft_init(&g) || (BUFF_SIZE <= 0) || !line)
 		return (-1);
 	while (!ft_strchr(g->save, '\n'))
 	{
 		ft_bzero(g->buff, BUFF_SIZE + 1);
 		if ((g->ret = read(fd, g->buff, BUFF_SIZE)) > 0)
-		{
-
-			tmp = ft_strjoin(g->save, g->buff);
-			free(g->save);
-			g->save = tmp;
-		}
+			g->save = ft_tmp(g->save, g->buff);
 		else
 			break ;
 	}
@@ -80,12 +87,6 @@ int		get_next_line(int const fd, char **line)
 		ft_memdel((void**)&g);
 		return (0);
 	}
-	if (ft_strchr(g->save, '\n'))
-	{
-		*line = ft_strsub(g->save, 0, ft_strnlen(g->save, '\n'));
-		g->save = ft_free_first(g->save, ft_strnlen(g->save, '\n'));
-	}
-	else
-		*line = ft_strsub(g->save, 0, ft_strnlen(g->save, '\0'));
+	*line = ft_line(&g, *line);
 	return (1);
 }
