@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:10:02 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/10 14:02:55 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/10 14:16:09 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		main(void)
 	char	*line = NULL;
 	int		fd = open("./caca.txt", O_RDONLY);
 	ft_putnbr(get_next_line(fd, &line));
-	ft_putendl(line);
+	ft_putendl(line);								//affiche la 1ere ligne
 	close(fd);
 	return (0);
 }
@@ -50,7 +50,7 @@ int     main(int ac, char **av)
 		ft_putchar('[');
 		ft_putnbr(i);
 		ft_putchar(']');
-		ft_putendl(line);
+		ft_putendl(line);							//affiche tout le fichier
 		free(line);
 	}
 		ft_putchar('[');
