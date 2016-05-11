@@ -6,7 +6,7 @@
 /*   By: vcaquant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 16:10:02 by vcaquant          #+#    #+#             */
-/*   Updated: 2016/05/11 18:14:46 by vcaquant         ###   ########.fr       */
+/*   Updated: 2016/05/11 18:18:23 by vcaquant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -42,7 +42,7 @@ int     main(int ac, char **av)
 
 	j = ac;
 	k = 1;
-	if (j < 2)
+	if (j < 2)											//1 fichier
 	{
 		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
@@ -62,7 +62,7 @@ int     main(int ac, char **av)
 		ft_putnbr(i);
 		ft_putchar(']');
 	}
-	while (j >= 2)
+	while (j >= 2)										//multi fd
 	{
 		fd = open(av[k], O_RDONLY);
 		if (fd == -1)
